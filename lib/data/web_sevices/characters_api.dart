@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:mov/constance/strings.dart';
+import 'package:mov/data/models/character.dart';
 
 class CharactersApi{
   Dio? dio;
@@ -16,7 +17,6 @@ class CharactersApi{
   Future<List<dynamic>> getAllCharacter() async{
     try{
       Response response = await dio!.get('character');
-      print(response.data.toString());
       return response.data;
     }
     catch(e){
